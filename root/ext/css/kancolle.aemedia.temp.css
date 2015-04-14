@@ -1,0 +1,111 @@
+/*设置帖子列表的样式*/
+#wp .showhide {
+  margin: 5px 0;
+  right: 0;
+}
+#wp .showhide:hover {
+  background-position: 0;
+}
+
+
+#wp .tl div.bm_c {
+  padding: 0;
+}
+#wp .bm_c tbody .common,#wp .bm_c tbody .lock, #wp .bm_c tbody .new>span {
+  padding-left: 10px;
+}
+
+
+#wp .bm_c tbody .common div[class^="t9_"] a,#wp .bm_c tbody .lock div[class^="t9_"] a {
+  max-width: 90px;
+  max-height: 90px;
+  overflow: hidden;
+}
+
+
+
+
+
+
+/*设置签名档的图片样式*/
+#wp .sign img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+/*设置帖子左侧用户信息的样式*/
+#wp .pbg2 {
+  width: 100px;
+}
+#wp .pls .o .pm2 {
+  width: 100px;
+}
+
+/*隐藏焦点图片tab选项*/
+#wp #portal_block_39 {
+  display: none;
+}
+
+/*右侧版主样式*/
+#wp .bm_c li {
+  margin: 0 18px 10px 0;
+}
+#wp .bm_c ul.ml.mls.cl li {
+  margin: 0;
+}
+
+
+
+/*水b榜和新人榜样式*/
+#wp #framellsuK8 li a, #wp #frameEii640 li a {
+  display: block;
+  float: left;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#wp #framellsuK8 li a {
+  width: 80px;
+}
+
+/*固定顶部导航栏*/
+.t9_top {
+  background: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+#wp {
+  margin-top: 50px;
+}
+
+/*分区下面的面包屑导航样式*/
+#wp .bm_c.cl.pbn>div:first-child {
+  padding-left: 0;
+}
+
+/*设置帖子列表上面分类的样式*/
+#threadlist .tf {
+  padding: 8px;
+  line-height: 21px;
+  position: relative;
+}
+#threadlist .tf a {
+  font-size: 12px;
+  padding: 0 10px 0 0;
+  background: transparent;
+}
+#atarget {
+  float: none;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+}
+
+/*移除空的帖子item*/
+.emptb {
+  display: none;
+}

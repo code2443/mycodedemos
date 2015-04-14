@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        .current_imgs_div {
+            width: 530px;
+            height: 300px;
+            border: 1px solid #ccc;
+            position: absolute;
+            background: #eee;
+        }
+        .current_imgs_div ul {
+            width: 520px;
+            height: 270px;
+            margin: 25px 5px 5px 5px;
+            overflow: scroll;
+            padding: 0;
+        }
+        .current_imgs_div li {
+            list-style: none;
+            float: left;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+            background: #fff;
+        }
+        .current_imgs_div li img {
+            height: 50px;
+        }
+        .current_imgs_div .close {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background: #FF0;
+            top: 4px;
+            right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="current_imgs_div">
+        <div class="close"></div>
+        <ul>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/005X3pWTjw1ep9sstew0ej301f01k742.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/005X3q9sjw1ep9vpewuhfj302j036glg.jpg">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/005X4kHAjw1ep9sp2x7lvj304b04g3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/dabbd266jw1eqdixk5nqsj201c01c3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/005X3pWTjw1ep9sstew0ej301f01k742.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/005X3q9sjw1ep9vpewuhfj302j036glg.jpg">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/005X4kHAjw1ep9sp2x7lvj304b04g3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/dabbd266jw1eqdixk5nqsj201c01c3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/005X3pWTjw1ep9sstew0ej301f01k742.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/005X3q9sjw1ep9vpewuhfj302j036glg.jpg">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/005X4kHAjw1ep9sp2x7lvj304b04g3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/dabbd266jw1eqdixk5nqsj201c01c3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/005X3pWTjw1ep9sstew0ej301f01k742.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/005X3q9sjw1ep9vpewuhfj302j036glg.jpg">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/005X4kHAjw1ep9sp2x7lvj304b04g3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/dabbd266jw1eqdixk5nqsj201c01c3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/005X3pWTjw1ep9sstew0ej301f01k742.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/005X3q9sjw1ep9vpewuhfj302j036glg.jpg">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/005X4kHAjw1ep9sp2x7lvj304b04g3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/dabbd266jw1eqdixk5nqsj201c01c3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/005X3pWTjw1ep9sstew0ej301f01k742.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/005X3q9sjw1ep9vpewuhfj302j036glg.jpg">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/005X4kHAjw1ep9sp2x7lvj304b04g3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/dabbd266jw1eqdixk5nqsj201c01c3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/005X3pWTjw1ep9sstew0ej301f01k742.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/005X3q9sjw1ep9vpewuhfj302j036glg.jpg">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/005X4kHAjw1ep9sp2x7lvj304b04g3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/dabbd266jw1eqdixk5nqsj201c01c3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/005X3pWTjw1ep9sstew0ej301f01k742.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/005X3q9sjw1ep9vpewuhfj302j036glg.jpg">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/005X4kHAjw1ep9sp2x7lvj304b04g3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/dabbd266jw1eqdixk5nqsj201c01c3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/005X3pWTjw1ep9sstew0ej301f01k742.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/005X3q9sjw1ep9vpewuhfj302j036glg.jpg">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/005X4kHAjw1ep9sp2x7lvj304b04g3yi.jpg">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/dabbd266jw1eqdixk5nqsj201c01c3yi.jpg">
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

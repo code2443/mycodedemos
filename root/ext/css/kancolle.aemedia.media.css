@@ -1,0 +1,29 @@
+@media screen and (min-width: 1500px) {
+    .wp {
+        width: 1500px !important;
+    }
+
+    #ct .mn {
+        width: 1262px;
+    }
+
+    #ct > img:first-child {
+        width: 100%;
+        height: auto;
+    }
+
+    #ct .sign img {
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        max-height: 300px;
+    }
+
+    #ct .zoom {
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        margin-left: 5%;
+        
+    }
+}
