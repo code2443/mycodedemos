@@ -47,7 +47,7 @@ var Slider = function() {
 		obj.timer = setTimeout(obj.next, obj.time);
 	};
 	obj.uie = function(tag) {
-		return $('<' + tag + '></' + tag + '>');
+		return jQuery('<' + tag + '></' + tag + '>');
 	};
 	obj.add = function(data) {
 		obj.add_imgdiv(data.img, data.link);
@@ -55,16 +55,16 @@ var Slider = function() {
 		obj.count++;
 	};
 	obj.bindevent = function() {
-		$('.slider .btn_pre').bind('click', function() {
+		jQuery('.slider .btn_pre').bind('click', function() {
 			obj.pre();
 		});
-		$('.slider .btn_next').bind('click', function() {
+		jQuery('.slider .btn_next').bind('click', function() {
 			obj.next();
 		});
 	};
 	obj.bindthumbevent = function($obj) {
 		$obj.bind('click', function() {
-			obj.setIndex($(this).data('index'));
+			obj.setIndex(jQuery(this).data('index'));
 		});
 	};
 	obj.add_imgdiv = function(url, link) {
@@ -92,18 +92,25 @@ var Slider = function() {
 		obj.bindthumbevent(div);
 	};
 	obj.set_current = function() {
-		$('.slider .mini .list>div').removeClass('current');
-		$('.slider .mini .list>div[data-index="' + obj.index + '"]').addClass('current');
+		jQuery('.slider .mini .list>div').removeClass('current');
+		jQuery('.slider .mini .list>div[data-index="' + obj.index + '"]').addClass('current');
 	};
 	obj.setThumbDivWidth = function() {
-		$('.slider .mini').width(obj.count * obj.minwidth);
+		jQuery('.slider .mini').width(obj.count * obj.minwidth);
 	};
 
 
 	obj.init = function() {
-		obj.list = $('.slider .frame .list');
-		obj.thumblist = $('.slider .mini .list');
+		obj.list = jQuery('.slider .frame .list');
+		obj.thumblist = jQuery('.slider .mini .list');
 		obj.bindevent();
+		jQuery.each(obj.list.find('a'), function(index, val) {
+			obj.images.push({
+				thumb: val.dataset.thumb,
+				img: val.dataset.img,
+				link: val.href
+			});
+		});
 
 		for (var i = 0; i < obj.images.length; i++) {
 			var item = obj.images[i];
@@ -117,14 +124,14 @@ var Tabs = function() {
 	var obj = this;
 
 	obj.change_tab = function(tab) {
-		$('.content .tabs .tabs_item a,.content .tabs .tabs_content >div').removeClass('current');
-		$('.content .tabs .tabs_item a[data-tab="' + tab + '"],.content .tabs .tabs_content >div[data-tab="' + tab + '"]').addClass('current');
+		jQuery('.content .tabs .tabs_item a,.content .tabs .tabs_content >div').removeClass('current');
+		jQuery('.content .tabs .tabs_item a[data-tab="' + tab + '"],.content .tabs .tabs_content >div[data-tab="' + tab + '"]').addClass('current');
 	};
 
 	obj.init = function() {
-		var tabs = $('.content .tabs .tabs_item a');
+		var tabs = jQuery('.content .tabs .tabs_item a');
 		tabs.bind('click', function() {
-			var $this = $(this);
+			var $this = jQuery(this);
 			var tab = $this.data('tab');
 			obj.change_tab(tab);
 
@@ -132,58 +139,17 @@ var Tabs = function() {
 		});
 	};
 };
-var WindowScroll = function() {
-	var obj = this;
-	obj.fixedTop = 50;
 
-	obj.init = function() {
-		$(window).bind('scroll', function() {
-			var s = $(window).scrollTop();
-			if (/MSIE /i.test(navigator.userAgent)) {
-				s = document.documentElement.scrollTop;
-			}
-			if (s > obj.fixedTop) {
-				$('.head,.slider').addClass('fixed');
-			} else {
-				$('.head,.slider').removeClass('fixed');
-			}
-		});
-	};
-};
 
 
 var slider = null;
 var tabs = null;
-var windowScroll = null;
 jQuery(document).ready(function($) {
 	slider = new Slider();
 	tabs = new Tabs();
-	windowScroll = new WindowScroll();
 
-	slider.images = [{
-		thumb: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/1.jpg',
-		img: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/1.jpg',
-		link: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/1.jpg'
-	}, {
-		thumb: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/2.jpg',
-		img: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/2.jpg',
-		link: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/2.jpg'
-	}, {
-		thumb: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/3.jpg',
-		img: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/3.jpg',
-		link: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/3.jpg'
-	}, {
-		thumb: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/4.jpg',
-		img: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/4.jpg',
-		link: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/4.jpg'
-	}, {
-		thumb: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/5.jpg',
-		img: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/5.jpg',
-		link: 'http://kcvp-logs-moe-static.smartgslb.com/images/head/5.jpg'
-	}];
 	slider.init();
 	slider.startauto();
 
 	tabs.init();
-	windowScroll.init();
 });

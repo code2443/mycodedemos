@@ -1,0 +1,23 @@
+<!--{template common/header}-->
+<link id="style_css" rel="stylesheet" type="text/css" href="/template/diy/css/comic_home.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+<div id="widgets">
+</div>
+<!--[diy=diypage]-->
+<div id="diypage" class="area">
+	<div id="frame1" class="frame move-span frame-1 cl">
+		<div id="frame1_left" class="column frame-1-c"></div>
+	</div>
+</div>
+<!--[/diy]-->
+<!--{if $topic['allowcomment']==1}-->
+	{eval
+		$data = &$topic;
+		$common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+		$form_url = "portal.php?mod=portalcp&ac=comment";
+		$commentlist = portaltopicgetcomment($topicid);	}
+	<!--{template portal/portal_comment}-->
+<!--{/if}-->
+<script src="/template/diy/js/jquery.easing.min.js?{VERHASH}" type="text/javascript"></script>
+<script src="/template/diy/js/comic_home.js?{VERHASH}" type="text/javascript"></script>
+<!--{template common/footer}-->
