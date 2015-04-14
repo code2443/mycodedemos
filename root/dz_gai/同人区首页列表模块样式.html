@@ -1,0 +1,48 @@
+<div class="content">
+	<div class="left_content">
+		<div class="tabs">
+			<ul class="tabs_item">
+				<li>
+					<a data-tab="1" class="current" href="#" >tabs1</a>
+				</li>
+				<li>
+					<a data-tab="2" href="#">tabs2</a>
+				</li>
+			</ul>
+			<div class="clear"></div>
+			<div class="tabs_content">
+				<div data-tab="1" class="current" >
+					<ul class="comics">
+					[loop]
+					<li>
+						<a href="{url}">
+							<div>
+								<img class="cover" src="{pic}" alt="">
+							</div>
+							<p class="des">{summary}</p>
+							<div class="author">
+								<img src="{avatar_middle}" alt="">
+								<p>{author}</p>
+							</div>
+							<p class="date">{dateline}</p>
+							<div class="hover">
+								<b>{title}</b>
+								<b>{forumurl}</b>
+							</div>
+						</a>
+					</li>
+					[/loop]
+					</ul>
+					<div class="clear"></div>
+				</div>
+				<div data-tab="2">
+					tabs2
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="right_content">
+		<div class="tops"></div>
+	</div>
+	<div class="clear"></div>
+</div>
