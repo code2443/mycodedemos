@@ -124,8 +124,9 @@ var Tabs = function() {
 	var obj = this;
 
 	obj.change_tab = function(tab) {
-		jQuery('.content .tabs .tabs_item a,.content .tabs .tabs_content >div').removeClass('current');
-		jQuery('.content .tabs .tabs_item a[data-tab="' + tab + '"],.content .tabs .tabs_content >div[data-tab="' + tab + '"]').addClass('current');
+		jQuery('.content .tabs .tabs_item a,.content .tabs .tabs_content .tab_item').removeClass('current');
+		jQuery('.content .tabs .tabs_item a[data-tab="' + tab + '"]').addClass('current');
+		jQuery('.content .tabs .tabs_content .tab_item.' + tab).addClass('current');
 	};
 
 	obj.init = function() {

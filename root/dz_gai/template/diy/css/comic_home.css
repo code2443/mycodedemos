@@ -268,11 +268,11 @@ ul {
     padding-right: 0px;
 }
 
-    .tabs_content > div {
+    .tabs_content .tab_item {
         display: none;
     }
 
-        .tabs_content > div.current {
+        .tabs_content .tab_item.current {
             display: block;
         }
 
