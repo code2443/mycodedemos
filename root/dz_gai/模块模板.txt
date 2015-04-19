@@ -1,0 +1,112 @@
+[同人区]首页[漫画]列表模块样式
+
+<div class="more">
+	<a href="#" target="_blank">更多</a>
+</div>
+<ul class="comics">
+[loop]
+	<li>
+		<a href="{url}" target="_blank">
+			<div>
+				<img class="cover lazyload" src="/template/expand/images/loading.jpg" data-original="{pic}" alt="{title}">
+			</div>
+			<p class="title">{title}</p>
+			<div class="author">
+				<img src="{avatar_middle}" alt="{author}">
+				<p>{author}</p>
+			</div>
+			<p class="date">2015-04-09 11:11</p>
+			<div class="hover">
+				<b>
+					<p class="des">{summary}</p>
+				</b>
+			</div>
+		</a>
+	</li>
+[/loop]
+</ul>
+<div class="clear"></div>
+<div class="btn_next">
+	<a href="#" target="_blank">点击查看更多漫画</a>
+</div>
+
+
+[同人区]首页[轻小说]列表模块样式
+
+<div class="more">
+	<a href="#" target="_blank">更多</a>
+</div>
+<ul class="comics">
+[loop]
+	<li>
+		<a href="{url}" target="_blank">
+			<div>
+				<img class="cover lazyload" src="/template/expand/images/loading.jpg" data-original="{pic}" alt="{title}">
+			</div>
+			<p class="title">{title}</p>
+			<div class="author">
+				<img src="{avatar_middle}" alt="{author}">
+				<p>{author}</p>
+			</div>
+			<p class="date">2015-04-09 11:11</p>
+			<div class="hover">
+				<b>
+					<p class="des">{summary}</p>
+				</b>
+			</div>
+		</a>
+	</li>
+[/loop]
+</ul>
+<div class="clear"></div>
+<div class="btn_next">
+	<a href="#" target="_blank">点击查看更多轻小说</a>
+</div>
+
+
+
+[同人区]首页右侧[热门轻小说]列表模块样式
+
+<div class="tops_list">
+<div class="list_title">
+	热门轻小说
+</div>
+<ul>
+[loop]
+	<li>
+		<a href="{url}" target="_blank">
+			<div class="img">
+				<img class="cover lazyload" src="/template/expand/images/loading.jpg" data-original="{pic}" alt="{title}">
+			</div>
+			<div class="title">{title}</div>
+			<div class="clear"></div>
+		</a>
+	</li>
+[/loop]
+</ul>
+</div>
+
+[同人区]首页右侧[热门漫画]列表模块样式
+
+<div class="tops_list">
+<div class="list_title">
+	热门漫画
+</div>
+<ul>
+[loop]
+	<li>
+		<a href="{url}" target="_blank">
+			<div class="img">
+				<img class="cover lazyload" src="/template/expand/images/loading.jpg" data-original="{pic}" alt="{title}">
+			</div>
+			<div class="title">{title}</div>
+			<div class="clear"></div>
+		</a>
+	</li>
+[/loop]
+</ul>
+</div>
+
+
+
+http://kancolle.aemedia.org/portal.php?mod=topic&topicid=1

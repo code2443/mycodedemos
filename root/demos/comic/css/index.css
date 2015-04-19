@@ -343,10 +343,13 @@ ul {
             font-size: 12px;
         }
         .comics li .title {
-            font-size: 16px;
-            height: 46px;
-            overflow: hidden;
-            margin: 2px;
+              font-size: 16px;
+              height: 46px;
+              overflow: hidden;
+              margin: 2px;
+              font-weight: normal;
+              line-height: normal;
+              padding: 0;
         }
 
         .comics li .hover {
@@ -460,6 +463,8 @@ ul {
     overflow: hidden;
     margin: 3px 0 3px 5px;
     line-height: 18px;
+    padding: 0;
+    font-weight: normal;
 }
 
 

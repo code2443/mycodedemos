@@ -157,4 +157,12 @@ jQuery(document).ready(function($) {
 	slider.startauto();
 
 	tabs.init();
+
+
+	jQuery('.comics img.lazyload').lazyload({
+		effect: "fadeIn"
+	});
+	jQuery('.tops_list img.lazyload').lazyload({
+		effect: "fadeIn"
+	});
 });

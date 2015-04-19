@@ -17,3 +17,59 @@
 	</div>
 </div>
 <div class="clear"></div>
+
+
+
+[同人区]首页右侧列表模块样式
+
+<div class="tops_list">
+<div class="list_title">
+	热门排行
+</div>
+<ul>
+	<li>
+		[loop]
+		<a href="{url}" target="_blank">
+			<div class="img">
+				<img class="cover lazyload" src="images/loading.jpg" data-original="{pic}" alt="{title}">
+			</div>
+			<div class="title">{title}</div>
+			<div class="clear"></div>
+		</a>
+		[/loop]
+	</li>
+</ul>
+</div>
+
+
+
+
+[同人区]首页列表模块样式
+
+<div class="more">
+	<a href="#" target="_blank">更多</a>
+</div>
+<ul class="comics">
+[loop]
+	<li>
+		<a href="{url}" target="_blank">
+			<div>
+				<img class="cover lazyload" src="images/loading.jpg" data-original="{pic}" alt="{title}">
+			</div>
+			<p class="des">{title}</p>
+			<div class="author">
+				<img src="{avatar_middle}" alt="">
+				<p>{author}</p>
+			</div>
+			<p class="date">{dateline}</p>
+			<div class="hover">
+				<b>{summary}</b>
+			</div>
+		</a>
+	</li>
+[/loop]
+</ul>
+<div class="clear"></div>
+<div class="btn_next">
+	<a href="#" target="_blank">点击查看更多漫画</a>
+</div>
