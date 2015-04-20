@@ -59,7 +59,7 @@ ul {
 
     .head.fixed {
         position: fixed;
-        z-index: 999;
+        z-index: 99;
         top: 0;
         left: 0;
     }
@@ -326,7 +326,7 @@ ul {
 
         .comics li img.cover {
             position: relative;
-            z-index: 991;
+            z-index: 91;
         }
 
         .comics li .author p {
@@ -350,6 +350,7 @@ ul {
               font-weight: normal;
               line-height: normal;
               padding: 0;
+              text-align: center;
         }
 
         .comics li .hover {
@@ -359,7 +360,7 @@ ul {
             background: #eee;
             top: -5px;
             left: -5px;
-            z-index: 990;
+            z-index: 90;
             /*display: none;*/
             filter: alpha(opacity=0);
             opacity: 0;
@@ -504,3 +505,5 @@ ul {
         width: 32%;
     }
 }
+
+

@@ -15,7 +15,7 @@
 				<img src="{avatar_middle}" alt="{author}">
 				<p>{author}</p>
 			</div>
-			<p class="date">2015-04-09 11:11</p>
+			<p class="date">{dateline}</p>
 			<div class="hover">
 				<b>
 					<p class="des">{summary}</p>
@@ -48,7 +48,7 @@
 				<img src="{avatar_middle}" alt="{author}">
 				<p>{author}</p>
 			</div>
-			<p class="date">2015-04-09 11:11</p>
+			<p class="date">{dateline}</p>
 			<div class="hover">
 				<b>
 					<p class="des">{summary}</p>
