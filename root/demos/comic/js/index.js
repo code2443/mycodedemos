@@ -146,18 +146,150 @@ var Tabs = function() {
 };
 
 
+var Comic_Items = function() {
+	var obj = this;
+	obj.config = {
+		item_min_width: 220,
+		item_max_width: 300,
+		item_max_count: 10,
+		item_min_count: 3
+
+	}
+	obj.item_now_count = 4;
+
+	obj.resize_img = function() {
+		var img_w = jQuery('.comics .cover').parent().width();
+		var f_h = img_w + 100;
+		jQuery('.comics .cover').parent()
+		jQuery('.comics .cover').width(img_w);
+		jQuery('.comics .cover').height(img_w);
+		jQuery('.comics li > a').height(f_h);
+	};
+	obj.checkItemWidth = function(w) {
+		return w >= obj.config.item_min_width && w <= obj.config.item_max_width;
+	}
+	obj.getRowItemCount = function(isadd) {
+		var item_change_func = function(i) {
+			return i + 1;
+		};
+		var item_check_func = function(count) {
+			return count <= obj.config.item_max_count &&
+				count >= obj.config.item_min_count
+		};
+		if (!isadd) {
+			item_change_func = function(i) {
+				return i - 1;
+			};
+		}
+
+		var content_w = jQuery('.tabs_content').width();
+		var count = obj.item_now_count;
+		var item_w = 0;
+		do {
+			count = item_change_func(count);
+			item_w = 100 / count - 1;
+			temp_w = parseFloat(content_w) * parseFloat(item_w / 100);
+			console.log({
+				item_w: item_w,
+				temp_w: temp_w,
+				count: count
+			})
+			if (obj.checkItemWidth(temp_w)) {
+				break;
+			}
+		}
+		while (item_check_func(count))
+		obj.item_now_count = count;
+		jQuery('.comics li').width(item_w + '%');
+	};
+	obj.resize_item = function() {
+		var w = jQuery('.comics li').width();
+		if (w > obj.config.item_max_width) {
+			obj.getRowItemCount(true);
+		} else if (w < obj.config.item_min_width) {
+			obj.getRowItemCount(false);
+		}
+	};
+	obj.resize_all = function() {
+		obj.resize_item();
+		obj.resize_img();
+	};
+
+	jQuery(window).bind('resize', obj.resize_all);
+	obj.resize_all();
+};
+var ScrollTop = function() {
+	var obj = this;
+	obj.config = {
+		top: 800,
+		showopacity: 1,
+		scrolltime: 800
+	};
+	obj.btn_to_top = null;
+	obj.is_show_btn = false;
+	obj.scrolltop = function() {
+		jQuery('body,html').animate({
+			scrollTop: 0
+		}, obj.config.scrolltime);
+	};
+	obj.checkShowButton = function() {
+		var s = jQuery(window).scrollTop();
+		if (/MSIE /i.test(navigator.userAgent)) {
+			s = document.documentElement.scrollTop;
+		}
+		if (s > obj.config.top) {
+			obj.showButton();
+		} else {
+			obj.hideButton();
+		}
+	};
+	obj.showButton = function() {
+		if (!!obj.is_show_btn) return;
+
+		obj.is_show_btn = true;
+		obj.btn_to_top.stop().animate({
+			opacity: obj.config.showopacity
+		}, 400);
+	};
+	obj.hideButton = function() {
+		if (!obj.is_show_btn) return;
+
+		obj.is_show_btn = false;
+		obj.btn_to_top.stop().animate({
+			opacity: 0
+		}, 400);
+
+	};
+
+	obj.bindevent = function() {
+		obj.btn_to_top.bind('click', obj.scrolltop);
+		jQuery(window).bind('scroll', obj.checkShowButton);
+	};
+
+	obj.init = function(btn) {
+		obj.btn_to_top = btn;
+		obj.bindevent();
+	};
+};
+
+
 
 var slider = null;
 var tabs = null;
+var comic_items = null;
+var scrolltop = null;
+
 jQuery(document).ready(function($) {
 	slider = new Slider();
 	tabs = new Tabs();
+	comic_items = new Comic_Items();
+	scrolltop = new ScrollTop();
 
 	slider.init();
 	slider.startauto();
 
 	tabs.init();
-
+	scrolltop.init(jQuery('#btn_to_top'));
 
 	jQuery('.comics img.lazyload').lazyload({
 		effect: "fadeIn"

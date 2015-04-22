@@ -1,7 +1,7 @@
 [同人区]首页[漫画]列表模块样式
 
 <div class="more">
-	<a href="#" target="_blank">更多</a>
+	<a href="/forum-44-1.html" target="_blank">更多</a>
 </div>
 <ul class="comics">
 [loop]
@@ -27,21 +27,21 @@
 </ul>
 <div class="clear"></div>
 <div class="btn_next">
-	<a href="#" target="_blank">点击查看更多漫画</a>
+	<a href="/forum-44-1.html" target="_blank">点击查看更多漫画</a>
 </div>
 
 
 [同人区]首页[轻小说]列表模块样式
 
 <div class="more">
-	<a href="#" target="_blank">更多</a>
+	<a href="/forum-44-1.html" target="_blank">更多</a>
 </div>
 <ul class="comics">
 [loop]
 	<li>
 		<a href="{url}" target="_blank">
 			<div>
-				<img class="cover lazyload" src="/template/expand/images/loading.jpg" data-original="{pic}" alt="{title}">
+				<img class="cover lazyload" src="/template/expand/images/loading.jpg" data-original="{avatar_big}" alt="{title}">
 			</div>
 			<p class="title">{title}</p>
 			<div class="author">
@@ -60,7 +60,7 @@
 </ul>
 <div class="clear"></div>
 <div class="btn_next">
-	<a href="#" target="_blank">点击查看更多轻小说</a>
+	<a href="/forum-44-1.html" target="_blank">点击查看更多轻小说</a>
 </div>
 
 
@@ -76,7 +76,7 @@
 	<li>
 		<a href="{url}" target="_blank">
 			<div class="img">
-				<img class="cover lazyload" src="/template/expand/images/loading.jpg" data-original="{pic}" alt="{title}">
+				<img class="cover lazyload" src="/template/expand/images/loading.jpg" data-original="{avatar_big}" alt="{title}">
 			</div>
 			<div class="title">{title}</div>
 			<div class="clear"></div>
