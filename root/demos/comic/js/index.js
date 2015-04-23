@@ -3,13 +3,14 @@ var Slider = function() {
 	obj.count = 0;
 	obj.index = 0;
 	obj.images = [];
-	obj.time = 2000;
+	obj.time = 3000;
 	obj.width = 1000;
 	obj.minwidth = 206;
 	obj.list = null;
 	obj.thumblist = null;
 	obj.timer = null;
 	obj.open_newtab = true;
+	obj.mouse_hover = false;
 
 	obj.next = function() {
 		var newindex = obj.index + 1;
@@ -44,6 +45,8 @@ var Slider = function() {
 		clearTimeout(obj.timer);
 	};
 	obj.startauto = function() {
+		obj.stopauto();
+		if (!!obj.mouse_hover) return;
 		obj.timer = setTimeout(obj.next, obj.time);
 	};
 	obj.uie = function(tag) {
@@ -61,6 +64,17 @@ var Slider = function() {
 		jQuery('.slider .btn_next').bind('click', function() {
 			obj.next();
 		});
+		jQuery('.slider .frame').bind('mouseenter', function() {
+			obj.mouse_hover = true;
+			obj.stopauto();
+		});
+		jQuery('.slider .frame').bind('mouseleave', function() {
+			obj.mouse_hover = false;
+			obj.startauto();
+		});
+
+
+
 	};
 	obj.bindthumbevent = function($obj) {
 		$obj.bind('click', function() {
