@@ -158,8 +158,6 @@ var Tabs = function() {
 		});
 	};
 };
-
-
 var Comic_Items = function() {
 	var obj = this;
 	obj.config = {
@@ -168,7 +166,7 @@ var Comic_Items = function() {
 		item_max_count: 10,
 		item_min_count: 3
 
-	}
+	};
 	obj.item_now_count = 4;
 
 	obj.resize_img = function() {
@@ -285,6 +283,47 @@ var ScrollTop = function() {
 		obj.bindevent();
 	};
 };
+var Comic_Items_Load = function($root) {
+	var obj = this;
+	obj.root = $root;
+	obj.btn_next = null;
+	obj.config = {
+		init_count: 24,
+		load_count: 12,
+		unload_item_class: 'unload'
+	};
+
+
+
+	obj.check_is_end = function() {
+		var unload_items = obj.root.find('li.' + obj.config.unload_item_class);
+		return unload_items.length <= 0;
+	};
+	obj.load_next = function() {
+		var unload_items = obj.root.find('li.' + obj.config.unload_item_class);
+		unload_items.slice(0, obj.config.load_count).removeClass(obj.config.unload_item_class);
+	};
+	obj.bindevent = function() {
+		obj.btn_next.bind('click', function() {
+			if (!obj.check_is_end()) {
+				obj.load_next();
+
+				return false;
+			}
+		});
+	};
+	obj.init = function() {
+		var all_items = obj.root.find('li');
+		if (all_items.length <= obj.config.init_count)
+			return;
+
+		obj.btn_next = obj.root.find('.btn_next');
+		obj.bindevent();
+		all_items.slice(obj.config.init_count).addClass(obj.config.unload_item_class);
+	};
+
+	obj.init();
+};
 
 
 
@@ -292,12 +331,16 @@ var slider = null;
 var tabs = null;
 var comic_items = null;
 var scrolltop = null;
+var comic_items_load_1 = null;
+var comic_items_load_2 = null;
 
 jQuery(document).ready(function($) {
 	slider = new Slider();
 	tabs = new Tabs();
 	comic_items = new Comic_Items();
 	scrolltop = new ScrollTop();
+	comic_items_load_1 = new Comic_Items_Load(jQuery('.tab_1.tab_item'));
+	comic_items_load_2 = new Comic_Items_Load(jQuery('.tab_2.tab_item'));
 
 	slider.init();
 	slider.startauto();

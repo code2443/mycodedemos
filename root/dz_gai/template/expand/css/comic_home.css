@@ -290,6 +290,9 @@ ul {
         margin: 0 1% 1% 0;
         width: 24%;
     }
+    .comics li.unload {
+        display: none;
+    }
 
         .comics li > a {
             display: block;
