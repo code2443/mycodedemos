@@ -165,7 +165,7 @@ var Tile = function() {
 				end_callback();
 			}
 		};
-		jQuery.each(lis, function (index, val) {
+		jQuery.each(lis, function(index, val) {
 			var $this = jQuery(this);
 			setTimeout(function() { //延时执行
 				obj.showListItem($this, index, end_func);
@@ -190,13 +190,13 @@ var Tile = function() {
 		});
 	};
 	obj.showAllRightList = function() {
-	    obj.showList(jQuery('.right .list.hot'), function () {
-		    obj.showList(jQuery('.right .list.new'), null, obj.showAllRightListTitle);
+		obj.showList(jQuery('.right .list.hot'), function() {
+			obj.showList(jQuery('.right .list.new'), null, obj.showAllRightListTitle);
 		});
 	};
 	obj.showAllRightListTitle = function() {
 		obj.showListTitle(jQuery('.right .list.hot .title'), function() {
-		    obj.showListTitle(jQuery('.right .list.new .title'));
+			obj.showListTitle(jQuery('.right .list.new .title'));
 		});
 	};
 
@@ -240,4 +240,10 @@ jQuery(document).ready(function() {
 	// windowScroll.init();
 
 	tile.init();
+
+	jQuery('a.coming').bind('click', function() {
+		alert('镇守府建设中,即将开放。');
+
+		return false;
+	});
 });
