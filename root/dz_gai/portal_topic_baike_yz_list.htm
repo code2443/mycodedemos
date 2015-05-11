@@ -1,0 +1,49 @@
+<!--{template common/header}-->
+<link id="style_css" rel="stylesheet" type="text/css" href="/template/expand/css/baike_yz_list.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+<div id="widgets">
+</div>
+<!--[diy=diypage]-->
+<div id="diypage" class="area">
+	<div id="frame1" class="frame move-span frame-1 cl">
+		<div id="frame1_left" class="column frame-1-c"></div>
+	</div>
+</div>
+
+
+    <div class="main_frame">
+        <div class="head">
+            <img src="/template/expand/images/baike/2000.jpg" alt="" />
+        </div>
+        <div class="main_content">
+            <div class="left tasklist">
+            </div>
+            <div class="right">
+                <!--{block/67}-->
+                <!--{block/68}-->
+            </div>
+        </div>
+        <div class="clear"></div>
+        <ul class="all_cate hide">
+            <!--{block/73}-->
+        </ul>
+        <div class="all_task hide">
+            <!--{block/72}-->
+        </div>
+    </div>
+<div class="clear"></div>
+<div class="footer">
+</div>
+<!--[/diy]-->
+<!--{if $topic['allowcomment']==1}-->
+	{eval
+		$data = &$topic;
+		$common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+		$form_url = "portal.php?mod=portalcp&ac=comment";
+		$commentlist = portaltopicgetcomment($topicid);	}
+	<!--{template portal/portal_comment}-->
+<!--{/if}-->
+<div id="btn_to_top"></div>
+<script src="/template/expand/js/jquery.ext.min.js?{VERHASH}" type="text/javascript"></script>
+<script src="/template/expand/js/baike_yz.min.js?{VERHASH}" type="text/javascript"></script>
+<!--{template common/footer}-->
